@@ -49,6 +49,7 @@ public class MovieController {
             movie.setName(updatedMovie.getName());
             movie.setRuntime(updatedMovie.getRuntime());
             movie.setYear(updatedMovie.getYear());
+            return ResponseEntity.status(HttpStatus.OK).body(movieRepository.save(movie));
         }
         return ResponseEntity.notFound().build();
     }
